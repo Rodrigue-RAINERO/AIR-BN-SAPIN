@@ -8,7 +8,7 @@
       <p><i class="fa-solid fa-euro-sign"></i> <%= @tree.price %></p>
     </div>
     <div class="card-footer">
-      <%= link_to "Back to list", trees_path, class: "btn btn-secondary btn-sm" %>
+      <%= link_to "Back to list", root_path, class: "btn btn-secondary btn-sm" %>
         <% if current_user == @tree.user%>
       <%= link_to "Edit", edit_tree_path(@tree), class: "btn btn-primary btn-sm" %>
       <% end %>
