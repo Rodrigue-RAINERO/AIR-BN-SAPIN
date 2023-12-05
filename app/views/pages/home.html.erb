@@ -16,11 +16,9 @@
               <p><%= tree.description %></p>
             </div>
           </div>
-          <% if current_user%>
+            <% if current_user != tree.user%>
           <%= link_to "Reserve", new_tree_booking_path(tree), class: "btn btn-primary" %>
-            <%else %>
-            <%= link_to "Add new", new_user_session_path, class: "btn btn-primary" %>
-         <% end %>
+          <% end %>
           <div class="card-footer">
           </div>
         </div>
@@ -33,14 +31,7 @@
   <%else %>
   <%= link_to "Add new", new_user_session_path, class: "btn btn-primary" %>
   <% end %>
-   <% if current_user%>
     <%= link_to "My trees", trees_path, class: "btn btn-primary" %>
-    <%else %>
-  <%= link_to "Add new", new_user_session_path, class: "btn btn-primary" %>
-  <% end %>
-   <% if current_user%>
     <%= link_to "My bookings", bookings_path, class: "btn btn-primary" %>
-<%else %>
-  <%= link_to "Add new", new_user_session_path, class: "btn btn-primary" %>
-  <% end %>
+
 </div>
