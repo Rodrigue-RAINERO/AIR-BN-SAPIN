@@ -2,11 +2,47 @@ class TreesController < ApplicationController
   before_action :set_tree, only: [:show, :edit, :update, :destroy]
   def index
     @trees = Tree.all
+    if params[:localisation]
+      if params[:price] != ""
+        @trees = Tree.where(["geoloc= ? and price= ?", params[:localisation],  params[:price]])
+        # raise
+      elsif params[:size] != ""
+        @trees = Tree.where(["geoloc= ? and taille= ?", params[:localisation],  params[:size].to_i])
+        # raise
+      elsif params[:price] && params[:size]
+        @trees = Tree.where(["geoloc= ? and taille= ? and price= ?", params[:localisation],  params[:size].to_i], params[:price])
+        # raise
+      else
+        #with only localisation
+        @trees = Tree.where(geoloc: params[:localisation])
+        # raise
+      end
+    end
   end
 
   def show
     # @tree = tree.find(params[:id])
   end
+
+  # def search
+  #   if params[:localisation]
+  #     if params[:price] != ""
+  #       @trees = Tree.where(["geoloc= ? and price= ?", params[:localisation],  params[:price]])
+  #       # raise
+  #     elsif params[:size] != ""
+  #       @trees = Tree.where(["geoloc= ? and taille= ?", params[:localisation],  params[:size].to_i])
+  #       # raise
+  #     elsif params[:price] && params[:size]
+  #       @trees = Tree.where(["geoloc= ? and taille= ? and price= ?", params[:localisation],  params[:size].to_i], params[:price])
+  #       # raise
+  #     else
+  #       #with only localisation
+  #       @trees = Tree.where(geoloc: params[:localisation])
+  #       # raise
+  #     end
+  #   end
+  #     render :trees
+  # end
 
   def new
     @tree = Tree.new

@@ -4,6 +4,16 @@
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
 
+    <form action="/" method="get">
+      <label for="localisation" name="localisation"></label>
+      <input type="search" id="localisation" name="localisation" placeholder="Enter localisation">
+      <label for="size" name="size"></label>
+      <input type="search" id="size" name="size" placeholder="Enter size">
+      <label for="price"></label>
+      <input type="text" id="price" name="price" placeholder="Enter price">
+      <input type="submit" %>
+    </form>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
