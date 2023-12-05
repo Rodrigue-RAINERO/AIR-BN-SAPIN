@@ -6,9 +6,8 @@
   <%= t.text_field :taille %>
   <%= t.label :price %>
   <%= t.text_field :price %>
-
   <%= t.submit %>
   <% if current_user == @tree.user%>
-   <%= link_to "Delete", tree_path(@tree), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
-<%end %>
+    <%= link_to "Delete", tree_path(@tree), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
+  <%end %>
 <% end %>
