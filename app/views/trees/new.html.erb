@@ -1,0 +1,10 @@
+<h1>New tree</h1>
+<%= form_with model: @tree do |t| %>
+  <%= t.label :titre %>
+  <%= t.text_field :titre %>
+  <%= t.label :taille %>
+  <%= t.text_field :taille %>
+  <%= t.label :price %>
+  <%= t.text_field :price %>
+  <%= t.submit %>
+<% end %>
