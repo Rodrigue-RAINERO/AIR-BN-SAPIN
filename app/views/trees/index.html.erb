@@ -22,5 +22,10 @@
       </div>
     <% end %>
   </div>
+
+    <% if current_user%>
   <%= link_to "Add new", new_tree_path, class: "btn btn-primary" %>
+  <%else %>
+  <%= link_to "Add new", new_user_session_path, class: "btn btn-primary" %>
+  <% end %>
 </div>
