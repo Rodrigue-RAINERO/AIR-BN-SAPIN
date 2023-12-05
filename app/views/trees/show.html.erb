@@ -1,15 +1,16 @@
 <div class="container">
   <div class="card">
     <div class="card-body">
-      <h2><%= @tree.name %></h2>
-      <p><%= @tree.address %></p>
-      <p><%= @tree.description %></p>
-      <p><i class="fa-solid fa-euro-sign"></i> <%= @tree.price_per_night %></p>
-      <p ><i class="fa-solid fa-user fa-spin-pulse"></i> <%= @tree.number_of_guests %></p>
+      <h2><%= @tree.titre %></h2>
+      <p><%= @tree.taille %></p>
+      <p><%= @tree.price %></p>
+      <p><i class="fa-solid fa-euro-sign"></i> <%= @tree.price %></p>
     </div>
     <div class="card-footer">
       <%= link_to "Back to list", trees_path, class: "btn btn-secondary btn-sm" %>
+        <% if current_user == @tree.user%>
       <%= link_to "Edit", edit_tree_path(@tree), class: "btn btn-primary btn-sm" %>
+      <% end %>
     </div>
   </div>
 </div>
