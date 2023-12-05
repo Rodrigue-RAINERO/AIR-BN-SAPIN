@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_booking, only: [:show, :edit, :update]
+def index
+  @bookings = Booking.where(user: current_user)
+end
   def show
     # @booking = booking.find(params[:id])
   end
@@ -30,6 +32,7 @@ class BookingsController < ApplicationController
     @booking.update(booking_params)
     redirect_to bookings_path
   end
+
 
   private
 

@@ -9,10 +9,11 @@
           <img src="<%= tree.image %>" class="card-img-top" alt="tree Image">
           <div class="card-body">
             <h4 class="card-title"><strong><%= link_to tree.titre, tree_path(tree) %></strong></h4>
-            <p><%= tree.taille %></p>
+            <p><%= tree.taille %>CM</p>
             <div class="d-flex justify-content-start">
               <p><%= tree.price %> <i class="fa-solid fa-euro-sign"></i> </p>
-
+              <p><%= tree.geoloc %></p>
+              <p><%= tree.description %></p>
             </div>
           </div>
           <div class="card-footer">
@@ -21,5 +22,10 @@
       </div>
     <% end %>
   </div>
+
+    <% if current_user%>
   <%= link_to "Add new", new_tree_path, class: "btn btn-primary" %>
+  <%else %>
+  <%= link_to "Add new", new_user_session_path, class: "btn btn-primary" %>
+  <% end %>
 </div>
