@@ -1,0 +1,13 @@
+<h1>Edit flat</h1>
+<%= form_with model: @tree do |t| %>
+  <%= t.label :titre %>
+  <%= t.text_field :titre %>
+  <%= t.label :taille %>
+  <%= t.text_field :taille %>
+  <%= t.label :price %>
+  <%= t.text_field :price %>
+
+  <%= t.submit %>
+   <%= link_to "Delete", tree_path(@tree), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
+
+<% end %>
