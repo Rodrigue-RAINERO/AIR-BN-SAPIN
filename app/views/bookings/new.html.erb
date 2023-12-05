@@ -2,7 +2,6 @@
 
 
 <%= form_with model: [@tree, @booking] do |t| %>
-  <p><%= @tree.price %></p>
   <%= t.label :start_date %>
   <%= t.date_field :start_date %>
   <%= t.label :end_date %>
