@@ -14,10 +14,11 @@ end
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
     @tree = Tree.find(params[:tree_id])
     @booking.tree = @tree
     if @booking.save
-      redirect_to tree_path(@tree)
+      redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -37,7 +38,7 @@ end
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :total_price )
+    params.require(:booking).permit(:start_date, :end_date)
   end
 
   def set_booking
