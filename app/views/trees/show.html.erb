@@ -8,7 +8,9 @@
     </div>
     <div class="card-footer">
       <%= link_to "Back to list", trees_path, class: "btn btn-secondary btn-sm" %>
+        <% if current_user == @tree.user%>
       <%= link_to "Edit", edit_tree_path(@tree), class: "btn btn-primary btn-sm" %>
+      <% end %>
     </div>
   </div>
 </div>
