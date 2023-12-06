@@ -6,6 +6,9 @@ class TreesController < ApplicationController
 
   def show
     # @tree = tree.find(params[:id])
+    if @tree.user == current_user
+      @bookings = @tree.bookings
+    end
   end
 
   def new
