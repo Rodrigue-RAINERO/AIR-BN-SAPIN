@@ -29,7 +29,7 @@
               <% if current_user != tree.user%>
                 <%= link_to "Reserve", current_user.nil? ? new_user_session_path : new_tree_booking_path(tree), class: "btn btn-primary" %>
               <% end %>
-              <div class="card-footer">
+              <div class="card-home-footer">
               </div>
             </div>
           </div>
