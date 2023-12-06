@@ -1,0 +1,12 @@
+<h1>Show book</h1>
+
+<div class="container">
+  <div class="card">
+    <div class="card-footer">
+      <%= link_to "Back to list", root_path, class: "btn btn-secondary btn-sm" %>
+            <p>ça a été booké par: <%= @booking.user.email %></p>
+            <p><%= @booking.start_date %></p>
+            <p><%= @booking.end_date %></p>
+    </div>
+  </div>
+</div>
