@@ -1,6 +1,6 @@
 <% count = @trees.length %>
 
-<div class="container">
+<div class="container big-box-trees-home-page">
   <h1>Home page(<%= count %>)</h1>
   <div class="row">
     <% @trees.each do |tree| %>
@@ -25,21 +25,3 @@
       </div>
     <% end %>
   </div>
-
-    <% if current_user%>
-  <%= link_to "Add new", new_tree_path, class: "btn btn-primary" %>
-  <%else %>
-  <%= link_to "Add new", new_user_session_path, class: "btn btn-primary" %>
-  <% end %>
-  <% if current_user%>
-    <%= link_to "My trees", trees_path, class: "btn btn-primary" %>
-    <%else %>
-  <%= link_to "My trees", new_user_session_path, class: "btn btn-primary" %>
-  <% end %>
-      <% if current_user%>
-    <%= link_to "My bookings", bookings_path, class: "btn btn-primary" %>
-    <%else %>
-  <%= link_to "My bookings", new_user_session_path, class: "btn btn-primary" %>
-  <% end %>
-
-</div>
