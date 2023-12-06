@@ -2,7 +2,9 @@ class PagesController < ApplicationController
   before_action :set_tree, only: [:show, :edit, :update, :destroy]
   def home
     @trees = Tree.all
+    # @trees = @trees.reject { |tree| tree.bookings.present? }
   end
+
   def show
     # @tree = tree.find(params[:id])
   end
