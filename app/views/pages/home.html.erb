@@ -1,35 +1,42 @@
 <% count = @trees.length %>
-
-<div class="container">
-  <h1>Home page(<%= count %>)</h1>
-  <div class="row">
-    <% @trees.each do |tree| %>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <img src="<%= tree.image %>" class="card-img-top" alt="tree Image">
-          <div class="card-body">
-            <h4 class="card-title"><strong><%= link_to tree.titre, tree_path(tree) %></strong></h4>
-            <p><%= tree.taille %>CM</p>
-            <div class="d-flex justify-content-start">
-              <p><%= tree.price %> <i class="fa-solid fa-euro-sign"></i> </p>
-              <p><%= tree.geoloc %></p>
-              <p><%= tree.description %></p>
+<div class = "test">
+<% if current_user %>
+<% total_bookings = current_user.trees.map{ |tree| tree.bookings}.flatten.count %>
+<p>Vous avez eu <%= total_bookings %> réservations</p>
+<% end %>
+</div>
+<div class="d-flex justify-content-between">
+  <div class="container big-box-trees-home-page">
+    <% count = @trees.length %>
+    <h1><strong>Home page</strong> (<%= count %> trees)</h1>
+    <div class="box-trees-home-page">
+      <div class="row">
+        <% @trees.each do |tree| %>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <img src="<%= tree.image %>" class="card-img-top" alt="tree Image">
+              <div class="card-body">
+                <h4 class="card-title"><strong><%= link_to tree.titre, tree_path(tree) %></strong></h4>
+                <div class="d-flex flex-column justify-content-start">
+                  <p><%= tree.geoloc %></p>
+                  <p><%= tree.description %></p>
+                  <div class="d-flex justify-content-between">
+                  <p><%= tree.taille %> cm</p>
+                  <p><%= tree.price %> <i class="fa-solid fa-euro-sign"></i> </p>
+                  </div>
+                </div>
+              </div>
+              <% if current_user != tree.user%>
+                <%= link_to "Reserve", current_user.nil? ? new_user_session_path : new_tree_booking_path(tree), class: "btn btn-primary" %>
+              <% end %>
+              <div class="card-footer">
+              </div>
             </div>
           </div>
-          <%= link_to "Reserve", new_tree_booking_path(tree), class: "btn btn-primary" %>
-          <div class="card-footer">
-          </div>
-        </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
-
-    <% if current_user%>
-  <%= link_to "Add new", new_tree_path, class: "btn btn-primary" %>
-  <%else %>
-  <%= link_to "Add new", new_user_session_path, class: "btn btn-primary" %>
-  <% end %>
-    <%= link_to "My trees", trees_path, class: "btn btn-primary" %>
-    <%= link_to "My bookings", bookings_path, class: "btn btn-primary" %>
-
+  <div class="map-home-page">
+  </div>
 </div>

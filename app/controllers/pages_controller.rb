@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   before_action :set_tree, only: [:show, :edit, :update, :destroy]
   def home
     @trees = Tree.all
+
     if params[:localisation]
       # raise
           if params[:min_price] != "" || params[:max_price] != ""
@@ -27,6 +28,7 @@ class PagesController < ApplicationController
             #  raise
           end
         end
+
   end
 
   def show
@@ -66,7 +68,7 @@ class PagesController < ApplicationController
   private
 
   def tree_params
-    params.require(:tree).permit(:titre, :taille, :price)
+    params.require(:tree).permit(:titre, :taille, :price, :geoloc, :description)
   end
 
   def set_tree

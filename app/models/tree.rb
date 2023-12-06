@@ -1,4 +1,7 @@
 class Tree < ApplicationRecord
   belongs_to :user
-  has_many :bookings
+
+  # validates :booking, uniqueness: { scope: :user }
+  has_many :bookings, dependent: :destroy
+
 end

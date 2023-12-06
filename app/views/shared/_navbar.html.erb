@@ -1,8 +1,10 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon border-bottom">
   <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <%= link_to root_path, class: "d-flex justify-content-center navbar-brand" do %>
+      <%= image_tag "sapin.png" %>
+      <h1>Air-Bn-Sapin</h1>
     <% end %>
+
     <div class="search-navbar">
     <form action="/" method="get">
       <label for="localisation" name="localisation"></label>
@@ -30,18 +32,41 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
+          <% if current_user%>
+            <li class="nav-item active">
+              <%= link_to "Add new tree", new_tree_path, class: "nav-link" %>
+            </li>
+          <%else %>
+            <li class="nav-item active">
+              <%= link_to "Add new tree", new_user_session_path, class: "nav-link" %>
+            </li>
+          <% end %>
+          <% if current_user%>
+            <li class="nav-item active">
+              <%= link_to "My trees", trees_path, class: "nav-link" %>
+            </li>
+          <%else %>
+            <li class="nav-item active">
+              <%= link_to "My trees", new_user_session_path, class: "nav-link" %>
+            </li>
+          <% end %>
+          <% if current_user%>
+            <li class="nav-item active">
+              <%= link_to "My bookings", bookings_path, class: "nav-link" %>
+            </li>
+          <%else %>
+            <li class="nav-item active">
+              <%= link_to "My bookings", new_user_session_path, class: "nav-link" %>
+            </li>
+          <% end %>
           <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
-          </a>
+            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+            </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= current_user.email %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>

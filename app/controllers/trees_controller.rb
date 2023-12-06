@@ -6,6 +6,9 @@ class TreesController < ApplicationController
 
   def show
     # @tree = tree.find(params[:id])
+    if @tree.user == current_user
+      @bookings = @tree.bookings
+    end
   end
 
   # def search
@@ -61,7 +64,7 @@ class TreesController < ApplicationController
   private
 
   def tree_params
-    params.require(:tree).permit(:titre, :taille, :price)
+    params.require(:tree).permit(:titre, :taille, :price, :geoloc, :description)
   end
 
   def set_tree

@@ -11,7 +11,11 @@
       <%= link_to "Back to list", root_path, class: "btn btn-secondary btn-sm" %>
         <% if current_user == @tree.user%>
       <%= link_to "Edit", edit_tree_path(@tree), class: "btn btn-primary btn-sm" %>
-      <% end %>
+        <% @bookings.each do |booking| %>
+            <p>ça a été booké par: <%= booking.user.email %></p>
+            <%= link_to "Voir info du booking", booking_path(booking), class: "btn btn-secondary btn-sm" %>
+            <%end %>
+          <% end %>
     </div>
   </div>
 </div>
