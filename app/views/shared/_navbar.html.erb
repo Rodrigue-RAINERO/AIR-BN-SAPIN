@@ -3,16 +3,25 @@
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
-
+    <div class="search-navbar">
     <form action="/" method="get">
       <label for="localisation" name="localisation"></label>
-      <input type="search" id="localisation" name="localisation" placeholder="Enter localisation">
-      <label for="size" name="size"></label>
-      <input type="search" id="size" name="size" placeholder="Enter size">
-      <label for="price"></label>
-      <input type="text" id="price" name="price" placeholder="Enter price">
+      <input type="search" id="localisation" name="localisation" placeholder="Enter localisation" required>
+      <label for="start_date" name="start_date"></label>
+      <input type="date" id="start_date" name="start_date" placeholder="Enter date" required>
+      <label for="end_date" name="end_date"></label>
+      <input type="date" id="end_date" name="end_date" placeholder="Enter date" required>
+      <label for="min_size" name="min_size"></label>
+      <input type="search" id="min_size" name="min_size" placeholder="Enter mini size cm">
+      <label for="max_size" name="max_size"></label>
+      <input type="search" id="max_size" name="max_size" placeholder="Enter max size cm">
+      <label for="min_price"></label>
+      <input type="text" id="min_price" name="min_price" placeholder="Enter mini price €">
+      <label for="max_price"></label>
+      <input type="text" id="max_price" name="max_price" placeholder="Enter maxi price €">
       <input type="submit" %>
     </form>
+    </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

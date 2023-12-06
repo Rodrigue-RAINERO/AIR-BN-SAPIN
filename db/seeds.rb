@@ -15,22 +15,22 @@ require 'faker'
 sapins =[ {
   nom: "epicea",
   image: "https://www.plantezcheznous.com/wp-content/uploads/2017/11/EpiceaCommun.jpg",
-  geoloc: "Nice"
+  geoloc: "nice"
 },
 {
   nom: "nordmann",
   image: "https://www.plantezcheznous.com/wp-content/uploads/2017/11/Nordmann.jpg",
-  geoloc: "Paris"
+  geoloc: "paris"
 },
 {
 nom: "sapin noble",
 image: "https://www.plantezcheznous.com/wp-content/uploads/2017/11/SapinNoble.jpg",
-geoloc: "Marseille"
+geoloc: "marseille"
 },
 {
 nom: "sapin de serbie",
 image: "https://www.plantezcheznous.com/wp-content/uploads/2017/11/Picea_omorika.jpg",
-geoloc: "Bordeaux"
+geoloc: "bordeaux"
 }
 ]
 
