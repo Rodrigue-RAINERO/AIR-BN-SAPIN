@@ -1,8 +1,12 @@
 <div class="container">
   <div class="card">
     <div class="card-body">
-      <img src="<%= @tree.image %>" class="card-img-top" alt="tree Image">
-      <h2><%= @tree.titre %></h2>
+<% if @tree.image.nil? %>
+            <% @tree.image = "https://www.lincroyable.fr/images/produits/65388%20(1).jpg" %>
+              <img src="<%= @tree.image %>" class="card-img-top" alt="tree Image">
+              <% else %>
+              <img src="<%= @tree.image %>" class="card-img-top" alt="tree Image">
+              <% end %>      <h2><%= @tree.titre %></h2>
       <p><%= @tree.taille %></p>
       <p><%= @tree.price %></p>
       <p><i class="fa-solid fa-euro-sign"></i> <%= @tree.price %></p>

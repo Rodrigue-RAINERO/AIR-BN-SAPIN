@@ -14,7 +14,12 @@
         <% @trees.each do |tree| %>
           <div class="col-md-4 mb-4">
             <div class="card h-100">
+            <% if tree.image.nil? %>
+            <% tree.image = "https://www.lincroyable.fr/images/produits/65388%20(1).jpg" %>
               <img src="<%= tree.image %>" class="card-img-top" alt="tree Image">
+              <% else %>
+              <img src="<%= tree.image %>" class="card-img-top" alt="tree Image">
+              <% end %>
               <div class="card-body">
                 <h4 class="card-title"><strong><%= link_to tree.titre, tree_path(tree) %></strong></h4>
                 <div class="d-flex flex-column justify-content-start">
