@@ -42,7 +42,7 @@ class PagesController < ApplicationController
   private
 
   def tree_params
-    params.require(:tree).permit(:titre, :taille, :price)
+    params.require(:tree).permit(:titre, :taille, :price, :geoloc, :description)
   end
 
   def set_tree
