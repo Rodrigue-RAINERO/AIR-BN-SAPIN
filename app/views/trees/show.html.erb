@@ -13,8 +13,7 @@
       <%= link_to "Edit", edit_tree_path(@tree), class: "btn btn-primary btn-sm" %>
         <% @bookings.each do |booking| %>
             <p>ça a été booké par: <%= booking.user.email %></p>
-          <p><%= booking.start_date %></p>
-            <p><%= booking.end_date %></p>
+            <%= link_to "Voir info du booking", booking_path(booking), class: "btn btn-secondary btn-sm" %>
             <%end %>
           <% end %>
     </div>
