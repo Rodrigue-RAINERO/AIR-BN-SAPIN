@@ -1,6 +1,36 @@
 .big-box-trees-home-page {
   margin-top: 50px;
 }
+
+.card-footer {
+  display: none;
+}
+
+.map-home-page {
+  height: 100%;
+  width: 500px;
+  background-color: grey;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-image: url("https://i.ebayimg.com/images/g/swQAAOSwdQRgh6DA/s-l1200.webp");
+}
+
+.box-trees-home-page {
+  margin-top: 20px;
+}
+
+.card p {
+  margin-bottom: 5px;
+}
+
+.card h4 {
+  margin-bottom: 20px;
+}
+
+.card a {
+  text-decoration: none;
+
 .test{
   position: absolute;
   top: 8vh;
