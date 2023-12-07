@@ -2,6 +2,13 @@ class TreesController < ApplicationController
   before_action :set_tree, only: [:show, :edit, :update, :destroy]
   def index
     @trees = Tree.where(user: current_user)
+      # The `geocoded` scope filters only flats with coordinates
+      @markers = @trees.geocoded.map do |tree|
+        {
+          lat: tree.latitude,
+          lng: tree.longitude
+        }
+      end
   end
 
   def show
@@ -64,7 +71,7 @@ class TreesController < ApplicationController
   private
 
   def tree_params
-    params.require(:tree).permit(:titre, :taille, :price, :geoloc, :description)
+    params.require(:tree).permit(:titre, :taille, :price, :address, :description)
   end
 
   def set_tree
