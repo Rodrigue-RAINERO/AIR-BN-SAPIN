@@ -1,4 +1,5 @@
 <% count = @trees.length %>
+
 <div class="container big-box-my-trees">
   <h1 class="d-flex my-trees-title"><strong> My <%= "tree".pluralize(count)%></strong>
     <p class="first-p my-auto">(</p>
@@ -6,6 +7,7 @@
     <p class="my-auto">)</p>
   </h1>
   <div class="row box-trees">
+
     <% @trees.each do |tree| %>
       <div class="col-md-4 mb-4">
         <div class="card h-100">

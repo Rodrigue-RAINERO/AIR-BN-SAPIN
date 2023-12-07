@@ -28,7 +28,6 @@ class PagesController < ApplicationController
             #  raise
           end
         end
-
   end
 
   def show
