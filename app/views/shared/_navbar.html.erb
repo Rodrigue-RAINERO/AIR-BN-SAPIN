@@ -1,30 +1,34 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon border-bottom">
   <div class="container-fluid">
     <%= link_to root_path, class: "d-flex justify-content-center navbar-brand" do %>
-      <%= image_tag "sapin.png" %>
-      <h1>Air-Bn-Sapin</h1>
+      <%= image_tag "sapin.png", class: "navbar-title-img" %>
+      <div class="d-flex navbar-title">
+        <h1>Air</h1>
+        <p class="bullet-point-title my-auto">•</p>
+        <h1>Bn</h1>
+        <p class="bullet-point-title my-auto">•</p>
+        <h1>Sapin</h1>
+      </div>
     <% end %>
-
     <div class="search-navbar">
-    <form action="/" method="get">
-      <label for="localisation" name="localisation"></label>
-      <input type="search" id="localisation" name="localisation" placeholder="Enter localisation" required>
-      <label for="start_date" name="start_date"></label>
-      <input type="date" id="start_date" name="start_date" placeholder="Enter date" required>
-      <label for="end_date" name="end_date"></label>
-      <input type="date" id="end_date" name="end_date" placeholder="Enter date" required>
-      <label for="min_size" name="min_size"></label>
-      <input type="search" id="min_size" name="min_size" placeholder="Enter mini size cm">
-      <label for="max_size" name="max_size"></label>
-      <input type="search" id="max_size" name="max_size" placeholder="Enter max size cm">
-      <label for="min_price"></label>
-      <input type="text" id="min_price" name="min_price" placeholder="Enter mini price €">
-      <label for="max_price"></label>
-      <input type="text" id="max_price" name="max_price" placeholder="Enter maxi price €">
-      <input type="submit" %>
-    </form>
+      <form action="/" method="get">
+        <label for="localisation" name="localisation"></label>
+        <input type="search" id="localisation" name="localisation" placeholder="Enter localisation" required>
+        <label for="start_date" name="start_date"></label>
+        <input type="date" id="start_date" name="start_date" placeholder="Enter date" required>
+        <label for="end_date" name="end_date"></label>
+        <input type="date" id="end_date" name="end_date" placeholder="Enter date" required>
+        <label for="min_size" name="min_size"></label>
+        <input type="search" id="min_size" name="min_size" placeholder="Enter mini size cm">
+        <label for="max_size" name="max_size"></label>
+        <input type="search" id="max_size" name="max_size" placeholder="Enter max size cm">
+        <label for="min_price"></label>
+        <input type="text" id="min_price" name="min_price" placeholder="Enter mini price €">
+        <label for="max_price"></label>
+        <input type="text" id="max_price" name="max_price" placeholder="Enter maxi price €">
+        <input type="submit" %>
+      </form>
     </div>
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -38,7 +42,7 @@
             <li class="nav-item active">
               <%= link_to "Add new tree", new_tree_path, class: "nav-link" %>
             </li>
-          <%else %>
+          <% else %>
             <li class="nav-item active">
               <%= link_to "Add new tree", new_user_session_path, class: "nav-link" %>
             </li>
@@ -66,6 +70,10 @@
               <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <% if current_user %>
+                <% total_bookings = current_user.trees.map{ |tree| tree.bookings}.flatten.count %>
+                <p>Vous avez <%= total_bookings %> <%= "réservation".pluralize(total_bookings) %></p>
+              <% end %>
               <%= current_user.email %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>

@@ -1,14 +1,8 @@
-<% count = @trees.length %>
-<div class = "test">
-<% if current_user %>
-<% total_bookings = current_user.trees.map{ |tree| tree.bookings}.flatten.count %>
-<p>Vous avez eu <%= total_bookings %> réservations</p>
-<% end %>
-</div>
-<div class="d-flex justify-content-between">
+
+<div class="d-flex justify-content-between body-home">
   <div class="container big-box-trees-home-page">
     <% count = @trees.length %>
-    <h1><strong>Home page</strong> (<%= count %> trees)</h1>
+    <h1><strong>Home page</strong> (<%= count %> <%= "tree".pluralize(count) %>)</h1>
     <div class="box-trees-home-page">
       <div class="row">
         <% @trees.each do |tree| %>
@@ -32,7 +26,7 @@
                 </div>
               </div>
               <% if current_user != tree.user%>
-                <%= link_to "Reserve", current_user.nil? ? new_user_session_path : new_tree_booking_path(tree), class: "btn btn-primary" %>
+                <%= link_to "Reserve", current_user.nil? ? new_user_session_path : new_tree_booking_path(tree), class: "btn-reserve-home mx-auto" %>
               <% end %>
               <div class="card-home-footer">
               </div>
