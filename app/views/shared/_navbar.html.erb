@@ -10,25 +10,29 @@
         <h1>Sapin</h1>
       </div>
     <% end %>
-    <div class="search-navbar d-flex">
-      <form action="/" method="get">
-        <label for="localisation" name="localisation"></label>
-        <input type="search" id="localisation" name="localisation" placeholder="Localisation" required>
-        <label for="start_date" name="start_date"></label>
-        <input type="date" id="start_date" name="start_date" placeholder="Date" required>
-        <label for="end_date" name="end_date"></label>
-        <input type="date" id="end_date" name="end_date" placeholder="Date" required>
-        <label for="min_size" name="min_size"></label>
-        <input type="search" id="min_size" name="min_size" placeholder="Mini size (cm)">
-        <label for="max_size" name="max_size"></label>
-        <input type="search" id="max_size" name="max_size" placeholder="Max size (cm)">
-        <label for="min_price"></label>
-        <input type="text" id="min_price" name="min_price" placeholder="Mini price (€)">
-        <label for="max_price"></label>
-        <input type="text" id="max_price" name="max_price" placeholder="Maxi price (€)">
-        <input type="submit", class="btn-submit-search-navbar" %>
-      </form>
-      <%= link_to "loop", class: "nav-link" %>
+    <div class="d-flex", data-controller="toggle">
+      <div class="search-navbar d-flex">
+        <form action="/" method="get">
+          <label for="localisation" name="localisation"></label>
+          <input type="search" id="localisation" name="localisation" placeholder="Localisation" required data-action="click->toggle#search">
+          <label for="start_date" name="start_date"></label>
+          <input type="date" id="start_date" name="start_date" placeholder="Date" required data-action="click->toggle#search">
+          <label for="end_date" name="end_date"></label>
+          <input type="date" id="end_date" name="end_date" placeholder="Date" required data-action="click->toggle#search">
+          <label for="min_size" name="min_size"></label>
+          <input type="search" id="min_size" name="min_size" placeholder="Mini size (cm)", class="d-none", data-toggle-target="togglableElement">
+          <label for="max_size" name="max_size"></label>
+          <input type="search" id="max_size" name="max_size" placeholder="Max size (cm)", class="d-none", data-toggle-target="togglableElement">
+          <label for="min_price"></label>
+          <input type="text" id="min_price" name="min_price" placeholder="Mini price (€)", class="d-none", data-toggle-target="togglableElement">
+          <label for="max_price"></label>
+          <input type="text" id="max_price" name="max_price" placeholder="Maxi price (€)", class="d-none", data-toggle-target="togglableElement">
+          <input type="submit", class="btn-submit-search-navbar d-none", data-toggle-target="togglableElement" %>
+        </form>
+      </div>
+      <%#= link_to "", class: "btn-search-search-navbar nav-link", data: {action:"click->toggle#search"} do %>
+        <%# <i class="fa-solid fa-magnifying-glass"></i> %>
+      <%# end %>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
