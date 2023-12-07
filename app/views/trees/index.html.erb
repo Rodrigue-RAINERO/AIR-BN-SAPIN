@@ -1,7 +1,7 @@
 <% count = @trees.length %>
 
 <div class="container">
-  <h1>My trees(<%= count %>)</h1>
+  <h1>My <%= "tree".pluralize(count) %>(<%= count %>)</h1>
   <div class="row">
     <% @trees.each do |tree| %>
       <div class="col-md-4 mb-4">
