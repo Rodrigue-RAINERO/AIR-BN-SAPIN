@@ -1,23 +1,32 @@
-<h1>My bookings</h1>
-<div class="row">
-    <% @bookings.each do |booking| %>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <img src="<%= booking.tree.image %>" class="card-img-top" alt="tree Image">
-          <div class="card-body">
-            <p><%= booking.tree.taille %>CM</p>
-            <div class="d-flex justify-content-start">
-              <p><%= booking.tree.price %> <i class="fa-solid fa-euro-sign"></i> </p>
-              <p><%= booking.tree.geoloc %></p>
-              <p><%= booking.tree.description %></p>
-              <p><%= booking.start_date %></p>
-              <p><%= booking.end_date %></p>
-                <%= link_to "Annuler reservation", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
+
+<% count = @bookings.length %>
+<div class="container big-box-my-trees">
+  <div class="box-trees">
+    <h1 class="d-flex my-trees-title"><strong> My <%= "booking".pluralize(count)%></strong>
+      <p class="first-p my-auto">(</p>
+      <div class="count my-auto"><%= count %></div>
+      <p class="my-auto">)</p>
+    </h1>
+    <div class="row">
+      <% @bookings.each do |booking| %>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img src="<%= booking.tree.image %>" class="card-img-top" alt="tree Image">
+            <div class="card-body">
+              <p><%= booking.tree.taille %>CM</p>
+              <div class="d-flex justify-content-start">
+                <p><%= booking.tree.price %> <i class="fa-solid fa-euro-sign"></i> </p>
+                <p><%= booking.tree.geoloc %></p>
+                <p><%= booking.tree.description %></p>
+                <p><%= booking.start_date %></p>
+                <p><%= booking.end_date %></p>
+              </div>
+            </div>
+            <div class="card-footer">
             </div>
           </div>
-          <div class="card-footer">
-          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
+</div>
