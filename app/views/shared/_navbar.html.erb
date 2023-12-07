@@ -10,24 +10,25 @@
         <h1>Sapin</h1>
       </div>
     <% end %>
-    <div class="search-navbar">
+    <div class="search-navbar d-flex">
       <form action="/" method="get">
         <label for="localisation" name="localisation"></label>
-        <input type="search" id="localisation" name="localisation" placeholder="Enter localisation" required>
+        <input type="search" id="localisation" name="localisation" placeholder="Localisation" required>
         <label for="start_date" name="start_date"></label>
-        <input type="date" id="start_date" name="start_date" placeholder="Enter date" required>
+        <input type="date" id="start_date" name="start_date" placeholder="Date" required>
         <label for="end_date" name="end_date"></label>
-        <input type="date" id="end_date" name="end_date" placeholder="Enter date" required>
+        <input type="date" id="end_date" name="end_date" placeholder="Date" required>
         <label for="min_size" name="min_size"></label>
-        <input type="search" id="min_size" name="min_size" placeholder="Enter mini size cm">
+        <input type="search" id="min_size" name="min_size" placeholder="Mini size (cm)">
         <label for="max_size" name="max_size"></label>
-        <input type="search" id="max_size" name="max_size" placeholder="Enter max size cm">
+        <input type="search" id="max_size" name="max_size" placeholder="Max size (cm)">
         <label for="min_price"></label>
-        <input type="text" id="min_price" name="min_price" placeholder="Enter mini price €">
+        <input type="text" id="min_price" name="min_price" placeholder="Mini price (€)">
         <label for="max_price"></label>
-        <input type="text" id="max_price" name="max_price" placeholder="Enter maxi price €">
-        <input type="submit" %>
+        <input type="text" id="max_price" name="max_price" placeholder="Maxi price (€)">
+        <input type="submit", class="btn-submit-search-navbar" %>
       </form>
+      <%= link_to "loop", class: "nav-link" %>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -73,10 +74,10 @@
               <% if current_user %>
                 <% total_bookings = current_user.trees.map{ |tree| tree.bookings}.flatten.count %>
                 <% if total_bookings > 0 %>
-                <p>Vous avez <%= total_bookings %> <%= "réservation".pluralize(total_bookings) %> sur vos arbres </p>
+                  <p>Vous avez <strong><%= total_bookings %></strong> <%= "réservation".pluralize(total_bookings) %> sur vos arbres </p>
                 <% else %>
-                <p>Vous n'avez pas de réservation sur vos arbres</p>
-              <% end %>
+                  <p>Vous n'avez pas de réservation sur vos arbres</p>
+                <% end %>
               <% end %>
               <%= current_user.email %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
