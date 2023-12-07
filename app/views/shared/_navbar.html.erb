@@ -72,7 +72,11 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <% if current_user %>
                 <% total_bookings = current_user.trees.map{ |tree| tree.bookings}.flatten.count %>
-                <p>Vous avez <%= total_bookings %> <%= "réservation".pluralize(total_bookings) %></p>
+                <% if total_bookings > 0 %>
+                <p>Vous avez <%= total_bookings %> <%= "réservation".pluralize(total_bookings) %> sur vos arbres </p>
+                <% else %>
+                <p>Vous n'avez pas de réservation sur vos arbres</p>
+              <% end %>
               <% end %>
               <%= current_user.email %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
