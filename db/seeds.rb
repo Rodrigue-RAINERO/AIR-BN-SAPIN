@@ -9,28 +9,33 @@
 #   end
 require 'faker'
 
-
+Booking.destroy_all
+puts 'destroying bookings'
+Tree.destroy_all
+puts 'destroying trees'
+User.destroy_all
+puts 'destroying users'
 
 
 sapins =[ {
   nom: "epicea",
   image: "https://www.plantezcheznous.com/wp-content/uploads/2017/11/EpiceaCommun.jpg",
-  geoloc: "nice"
+  address: "nice"
 },
 {
   nom: "nordmann",
   image: "https://www.plantezcheznous.com/wp-content/uploads/2017/11/Nordmann.jpg",
-  geoloc: "paris"
+  address: "paris"
 },
 {
 nom: "sapin noble",
 image: "https://www.plantezcheznous.com/wp-content/uploads/2017/11/SapinNoble.jpg",
-geoloc: "marseille"
+address: "marseille"
 },
 {
 nom: "sapin de serbie",
 image: "https://www.plantezcheznous.com/wp-content/uploads/2017/11/Picea_omorika.jpg",
-geoloc: "bordeaux"
+address: "bordeaux"
 }
 ]
 
@@ -45,7 +50,7 @@ user = User.create!(name: Faker::Name.name, email: Faker::Internet.email, passwo
     titre: sapin[:nom],
     taille: taille,
     price: price,
-    geoloc: sapin[:geoloc],
+    address: sapin[:address],
     description: description.sample,
     image: sapin[:image],
     user: user
@@ -57,7 +62,7 @@ end
 #   titre: 'Light & Spacious Garden Tree London',
 #   taille: '10 Clifton Gardens London W9 1DT',
 #   price: 'A lovely summer feel for this spacious garden Tree. Two double bedrooms, open plan living area, large kitchen and a beautiful conservatory',
-#   geoloc: 75,
+#   address: 75,
 #   description: 3,
 #   image_url: 'https://prod-saint-gobain-fr.content.saint-gobain.io/sites/saint-gobain.fr/files/2022-04/maison-contemporaine-la-maison-saint-gobain01.jpg'
 # )
@@ -65,7 +70,7 @@ end
 #   titre: 'Une belle room',
 #   taille: 'Avenue de l/cole',
 #   price: 'Un bon sejour OKLM',
-#   geoloc: 25,
+#   address: 25,
 #   description: 2,
 #   image_url:'https://www.depreux-construction.com/wp-content/uploads/2022/11/maisons-modernes-modeles-plans-amenagement.jpg'
 # )
@@ -73,7 +78,7 @@ end
 #   titre: 'La BatRoom',
 #   taille: 'Gotham city',
 #   price: 'Pour les gens bresom',
-#   geoloc: 300,
+#   address: 300,
 #   description: 7,
 #   image_url:'https://i.ebayimg.com/images/g/SNgAAOSwjh1hr97F/s-l1600.jpg'
 # )
@@ -81,7 +86,7 @@ end
 #   titre: 'MusicStudio',
 #   taille: 'MeloGangx',
 #   price: 'RDV Vendredi',
-#   geoloc: 1250,
+#   address: 1250,
 #   description: 2,
 #   image_url: "https://p.turbosquid.com/ts-thumb/dS/RRisMD/ZNgsUquN/1/png/1552579740/600x600/fit_q87/7fcfdfa28a8dfa60d936d6d8b32ba5ce7b41fe01/1.jpg"
 # )
