@@ -79,16 +79,24 @@
 
 
 .search-navbar input {
-  width: 50px;
+  width: 125px;
+  border-radius: 15px;
+  padding: 5px 0px 5px 10px;
+}
+
+.btn-submit-search-navbar {
+  padding-right: 5px !important;
 }
 
 .dropdown-menu {
   transition: 0.8s ease;
+  text-align: center;
+  width: 300px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .dropdown-menu:hover {
-  width: 200px;
+  background-color: rgb(214, 236, 213);
   transition: 0.8s ease;
 }
 
