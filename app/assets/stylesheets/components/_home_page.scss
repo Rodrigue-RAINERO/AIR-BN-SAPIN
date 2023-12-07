@@ -9,15 +9,16 @@
 .map-home-page {
   height: 100vh;
   width: 500px;
-  background-color: grey;
   position: sticky;
   top: 0;
-  background-image: contain;
-  background-image: url("https://i.ebayimg.com/images/g/swQAAOSwdQRgh6DA/s-l1200.webp");
+}
+
+.mapboxgl-map {
+  position: sticky !important;
 }
 
 .map-home-page:hover {
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px !important;
 }
 
 .box-trees {

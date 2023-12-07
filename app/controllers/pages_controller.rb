@@ -6,17 +6,17 @@ class PagesController < ApplicationController
     if params[:localisation]
       # raise
           if params[:min_price] != "" || params[:max_price] != ""
-            @trees = Tree.where(["geoloc= ? and price >= ? and price <= ?", params[:localisation],  params[:min_price], params[:max_price]])
+            @trees = Tree.where(["address= ? and price >= ? and price <= ?", params[:localisation],  params[:min_price], params[:max_price]])
             # raise
           elsif params[:min_size] != "" || params[:max_size] != ""
-            @trees = Tree.where(["geoloc= ? and taille >= ? and taille <= ?", params[:localisation],  params[:min_size].to_i, params[:max_size].to_i])
+            @trees = Tree.where(["address= ? and taille >= ? and taille <= ?", params[:localisation],  params[:min_size].to_i, params[:max_size].to_i])
             # raise
           elsif params[:min_price] != "" || params[:max_price] != "" && params[:min_size] != "" || params[:max_size] != ""
-            @trees = Tree.where(["geoloc= ? and taille= ? and price= ?", params[:localisation],  params[:min_size].to_i, params[:max_size].to_i], params[:min_price], params[:max_price])
+            @trees = Tree.where(["address= ? and taille= ? and price= ?", params[:localisation],  params[:min_size].to_i, params[:max_size].to_i], params[:min_price], params[:max_price])
             # raise
             # we want to see only available trees
           elsif  params[:start_date] != "" && params[:end_date] != ""
-            @trees = Tree.where(["geoloc= ? ", params[:localisation]])
+            @trees = Tree.where(["address= ? ", params[:localisation]])
             @trees = @trees.reject do |tree|
               tree.bookings.any? do |booking|
                 booking_overlaps?(booking, params[:start_date], params[:end_date])
@@ -24,10 +24,18 @@ class PagesController < ApplicationController
             end
           else
             #with only localisation
-            @trees = Tree.where(geoloc: params[:localisation].downcase)
+            @trees = Tree.where(address: params[:localisation].downcase)
             #  raise
           end
         end
+# The `geocoded` scope filters only flats with coordinates
+@trees = Tree.where(id:@trees.map(&:id))
+@markers = @trees.geocoded.map do |tree|
+  {
+    lat: tree.latitude,
+    lng: tree.longitude
+  }
+end
   end
 
   def show
@@ -67,7 +75,7 @@ class PagesController < ApplicationController
   private
 
   def tree_params
-    params.require(:tree).permit(:titre, :taille, :price, :geoloc, :description)
+    params.require(:tree).permit(:titre, :taille, :price, :address, :description)
   end
 
   def set_tree

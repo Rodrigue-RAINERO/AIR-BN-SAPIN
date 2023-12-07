@@ -24,7 +24,7 @@
             <div class="card-body">
               <h4 class="card-title"><strong><%= link_to tree.titre, tree_path(tree) %></strong></h4>
               <div class="d-flex flex-column justify-content-start">
-                <p><%= tree.geoloc %></p>
+                <p><%= tree.address %></p>
                 <p><%= tree.description %></p>
                 <div class="d-flex justify-content-between">
                   <p><%= tree.taille %> cm</p>
@@ -42,5 +42,10 @@
       <% end %>
     </div>
   </div>
-  <div class="map-home-page">
+  <div style="position: sticky;">
+    <div class="map-home-page"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
+</div>

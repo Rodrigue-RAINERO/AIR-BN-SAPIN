@@ -1,4 +1,3 @@
-
 <% count = @bookings.length %>
 <div class="container big-box-my-trees">
   <div class="box-trees">
@@ -16,10 +15,11 @@
               <p><%= booking.tree.taille %>CM</p>
               <div class="d-flex justify-content-start">
                 <p><%= booking.tree.price %> <i class="fa-solid fa-euro-sign"></i> </p>
-                <p><%= booking.tree.geoloc %></p>
+                <p><%= booking.tree.address %></p>
                 <p><%= booking.tree.description %></p>
                 <p><%= booking.start_date %></p>
                 <p><%= booking.end_date %></p>
+                <%= link_to "Annuler reservation", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
               </div>
             </div>
             <div class="card-footer">
