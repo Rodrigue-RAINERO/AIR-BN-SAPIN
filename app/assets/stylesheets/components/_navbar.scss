@@ -12,6 +12,10 @@
   margin-top: 10px;
 }
 
+.navbar-title-img:hover {
+  box-shadow: rgba(0, 0, 0, 1) 0px 25px 20px -20px;
+}
+
 .navbar-title {
   padding-left: 10px;
   padding-top: 20px;
@@ -25,7 +29,10 @@
 }
 
 .navbar-title:hover h1 {
-  color: #4ee68b;
+  padding-bottom: 15px;
+  font-size: 38px;
+  -webkit-text-stroke: rgb(0, 0, 0) 0.8px;
+  color: #fa0000;
   transition: 0.8s ease;
 }
 
@@ -41,11 +48,12 @@
   border-color: rgb(0, 0, 0);
   height: 8vh;
   border-bottom-width: 3px;
+  z-index: 100;
 }
 
 .navbar:hover {
-  height: 11vh;
-  transition: 0.8s ease;
+  background-color: rgb(214, 236, 213);
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
 .nav-link {
@@ -61,7 +69,7 @@
   padding-right: 30px !important;
   background-color: #71EFA3;
   color: black;
-  box-shadow: rgb(177, 189, 201) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.952) -3px -3px 6px 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
   transition: 0.8s ease;
 }
 
@@ -72,4 +80,26 @@
 
 .search-navbar input {
   width: 50px;
+}
+
+.dropdown-menu {
+  transition: 0.8s ease;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.dropdown-menu:hover {
+  width: 200px;
+  transition: 0.8s ease;
+}
+
+.dropdown-transition {
+  opacity: 0;
+  transform-origin: top right;
+  transform: scaleY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.show-dropdown {
+  opacity: 1;
+  transform: scaleY(1);
 }

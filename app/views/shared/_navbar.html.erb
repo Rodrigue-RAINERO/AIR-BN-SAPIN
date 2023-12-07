@@ -65,11 +65,11 @@
               <%= link_to "My bookings", new_user_session_path, class: "nav-link" %>
             </li>
           <% end %>
-          <li class="nav-item dropdown">
-            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <li class="nav-item dropdown", data-controller="toggle">
+            <a href="#" class="avatar" id="navbarDropdown", data-action="click->toggle#fire", data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
             </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu dropdown-menu-end dropdown-transition d-none" aria-labelledby="navbarDropdown", data-toggle-target="togglableElement">
               <% if current_user %>
                 <% total_bookings = current_user.trees.map{ |tree| tree.bookings}.flatten.count %>
                 <p>Vous avez <%= total_bookings %> <%= "réservation".pluralize(total_bookings) %></p>
