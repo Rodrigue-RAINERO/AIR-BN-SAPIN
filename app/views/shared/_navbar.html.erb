@@ -26,7 +26,7 @@
         <input type="text" id="min_price" name="min_price" placeholder="Mini price (€)">
         <label for="max_price"></label>
         <input type="text" id="max_price" name="max_price" placeholder="Maxi price (€)">
-        <input type="submit", class="btn-submit-search-navbar" %>
+        <input type="submit", class="btn-submit-search-navbar"%>
       </form>
       <%= link_to "loop", class: "nav-link" %>
     </div>
@@ -76,7 +76,7 @@
                 <% if total_bookings > 0 %>
                   <p>Vous avez <strong><%= total_bookings %></strong> <%= "réservation".pluralize(total_bookings) %> sur vos arbres </p>
                 <% else %>
-                  <p>Vous n'avez pas de réservation sur vos arbres</p>
+                  <p>You still don't have a reservation</p>
                 <% end %>
               <% end %>
               <%= current_user.email %>
