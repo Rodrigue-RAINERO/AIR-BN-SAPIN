@@ -8,7 +8,6 @@
   backdrop-filter: blur(5px);
   padding: 30px;
   border-radius: 15px;
-  margin-top: 60px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -21,25 +20,29 @@
   margin-bottom: 20px;
 }
 
-.text-list-description {
-  margin-bottom: 90px;
+.text-list-image-tree {
+  margin-bottom: 50px;
 }
 
-.text-list-new-movie, .text-list-description {
+.text-list-new-movie,
+.text-list-description,
+.text-list-image-tree {
   background-color: rgb(240, 240, 240) !important;
 }
 
-.text-list-new-movie:focus, .text-list-description:focus {
+.text-list-new-movie:focus,
+.text-list-description:focus,
+.text-list-image-tree:focus {
   background-color: white !important;
 }
 
-.btn-update-tree, .btn-edit-delete {
-  transition: 0.8s ease;
+.btn-update-tree,
+.btn-edit-delete {
+  transition: 0.5s ease;
   border: none;
   margin-top: 10px;
   font-family: roboto;
   font-weight: bold;
-  transition: 0.8s ease;
   background-color: white;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   text-align: center;
@@ -77,9 +80,10 @@
   border-bottom-left-radius: 0;
 }
 
-.btn-update-tree:hover, .btn-edit-delete:hover {
+.btn-update-tree:hover,
+.btn-edit-delete:hover {
   color: black;
   font-weight: bold;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-  transition: 0.8s ease;
+  transition: 0.5s ease;
 }

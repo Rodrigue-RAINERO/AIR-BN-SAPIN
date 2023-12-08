@@ -1,5 +1,5 @@
-.div-new-trees {
-  transition: 0.5s ease;
+.div-new-bookings {
+  transition: 0.8s ease;
   font-family: roboto;
   color: black;
   width: 550px;
@@ -8,7 +8,7 @@
   backdrop-filter: blur(5px);
   // padding: 30px;
   border-radius: 15px;
-  margin-top: 30px;
+  margin-top: 60px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   padding-bottom: 0.1px;
 }
@@ -17,26 +17,32 @@
   padding: 30px 30px 0 30px;
 }
 
-.div-new-trees:hover {
+.div-new-bookings:hover {
   background-color: rgb(214, 236, 213);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
-.text-list-new-tree,
-.text-new-description {
+.text-list-new-booking,
+.text-new-description,
+.text-list-end-date-booking {
   background-color: rgb(240, 240, 240) !important;
 }
 
-.text-list-new-tree:focus,
-.text-new-description:focus {
+.text-list-new-booking:focus,
+.text-new-description:focus,
+.text-list-end-date-booking {
   background-color: white !important;
+}
+
+.text-list-end-date-booking {
+  margin-bottom: 20px;
 }
 
 .center-form {
   text-align: center;
 }
 
-// .btn-create-tree {
+// .btn-create-booking {
 //   transition: all 0.8s ease;
 //   border: none;
 //   margin-top: 10px;
@@ -50,7 +56,7 @@
 //   border-radius: 15px;
 // }
 
-// .btn-create-tree:hover {
+// .btn-create-booking:hover {
 //   width: 100%;
 //   color: black;
 //   background-color: #71EFA3;
@@ -59,14 +65,14 @@
 //   transition: all 0.8s ease;
 // }
 
-.div-btn-create-tree {
+.div-btn-create-booking {
   display: flex;
   justify-content: center;
 }
 
-.btn-create-tree {
+.btn-create-booking {
   transition: 0.5s ease;
-  margin-top: 10px;
+  margin-top: 20px;
   font-family: roboto;
   font-weight: bold;
   background-color: white;
@@ -75,13 +81,13 @@
   color: rgba(0,0,0,.5);
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 100px;
+  width: 35%;
   border-radius: 15px;
   margin-bottom: 10px;
   border: none;
 }
 
-.btn-create-tree:hover {
+.btn-create-booking:hover {
   margin-bottom: 0;
   width: 100%;
   border-top-right-radius: 0;
@@ -99,20 +105,33 @@
   margin-bottom: 10px;
 }
 
-.form-actions {
-  transition: 0.5s ease;
-  font-family: roboto;
-  background-color: white;
-  border-radius: 15px;
-  font-weight: bold;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+.big-box-new-booking {
+  margin-top: 150px;
 }
 
-.form-actions:hover {
-  padding-left: 30px !important;
-  padding-right: 30px !important;
-  background-color: #71EFA3;
-  color: black;
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+.input-new-reservation {
+  text-align: center;
+}
+
+.div-new-reservation {
   transition: 0.8s ease;
+  font-family: roboto;
+  color: black;
+  margin-top: 150px;
+  width: 450px;
+  height: auto;
+  background-color: rgb(245, 245, 245);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.div-new-reservation:hover {
+  background-color: rgb(214, 236, 213);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.div-input-new-reservation {
+  align-items: end;
+  margin-right: 95px;
 }

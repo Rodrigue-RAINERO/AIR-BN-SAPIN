@@ -9,6 +9,7 @@
           <%= t.input :price, input_html: {class: "text-list-new-movie"} %>
           <%= t.input :address, input_html: {class: "text-list-new-movie"} %>
           <%= t.input :description, input_html: {class: "text-list-description"} %>
+          <%= t.input :image, input_html: {class: "text-list-image-tree"} %>
           <%= t.submit class: "btn-update-tree" %>
           <% if current_user == @tree.user%>
             <%= link_to "Delete", tree_path(@tree), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-edit-delete" %>

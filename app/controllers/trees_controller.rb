@@ -41,6 +41,7 @@ class TreesController < ApplicationController
     if @tree.save
     redirect_to trees_path
     else
+      Rails.logger.error(@tree.errors.inspect)
       render :new, status: :unprocessable_entity
     end
   end
@@ -64,7 +65,7 @@ class TreesController < ApplicationController
   private
 
   def tree_params
-    params.require(:tree).permit(:titre, :taille, :price, :address, :description)
+    params.require(:tree).permit(:titre, :taille, :price, :address, :description, :image)
   end
 
   def set_tree

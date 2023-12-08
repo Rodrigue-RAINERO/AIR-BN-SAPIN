@@ -9,7 +9,12 @@
     <% @bookings.each do |booking| %>
       <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="<%= booking.tree.image %>" class="card-img-top" alt="tree Image">
+          <% if booking.tree.image == "" || booking.tree.image.nil? %>
+            <% booking.tree.image = "https://www.lincroyable.fr/images/produits/65388%20(1).jpg" %>
+            <img src="<%= booking.tree.image %>" class="card-img-top" alt="tree Image">
+          <% else %>
+            <img src="<%= booking.tree.image %>" class="card-img-top" alt="tree Image">
+          <% end %>
           <div class="card-body">
             <div class="d-flex flex-column justify-content-start">
               <p><%= booking.tree.address %></p>
@@ -20,19 +25,15 @@
               </div>
             </div>
           </div>
-          <div class="card-footer">
-            <p><%= booking.start_date %></p>
-            <p><%= booking.end_date %></p>
+          <div class="my-booking-card-footer">
+            <div class="div-text-booking-card-footer">
+            <p>Tree of : <%= booking.tree.user.email %></p>
+            <p><%= booking.start_date %> ... <%= booking.end_date %>
+            </div>
           </div>
           <%= link_to "Cancel reservation", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-cansel-reservation mx-auto" %>
         </div>
       </div>
-    </div>
-  <% end %>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <% end %>
+  </div>
 </div>

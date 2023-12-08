@@ -3,10 +3,10 @@
 }
 
 .btn-edit {
+  transition: 0.5s ease;
   margin-top: 10px;
   font-family: roboto;
   font-weight: bold;
-  transition: 0.8s ease;
   background-color: white;
   box-shadow: 0 1px 2px rgba(0,0,0,0.5);
   text-align: center;
@@ -19,7 +19,6 @@
 }
 
 .btn-edit:hover {
-  margin-top: 0;
   margin-bottom: 0;
   width: 100%;
   border-top-right-radius: 0;
@@ -28,7 +27,7 @@
   color: black;
   font-weight: bold;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-  transition: 0.8s ease;
+  transition: 0.5s ease;
 }
 
 // .btn-see-more, .btn-edit {
@@ -80,13 +79,15 @@
 //   left: 0;
 // }
 
-.card-footer {
+.card-footer-show-tree {
+  padding-top: 20px;
+  height: 150px;
   text-align: center;
-  height: 100px;
+  background-color: rgba(0,0,0,.03);
+  border-top: 1px solid rgba(0,0,0,.125);
   border-bottom: 1px solid rgba(0,0,0,.125);
 }
 
-.card-footer p {
-  margin-top: 10px;
-  font-size: 17px;
+.div-text-booking-card-footer {
+  padding: 20px 0 20px 0;
 }
