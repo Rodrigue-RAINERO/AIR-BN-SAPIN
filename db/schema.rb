@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_07_195948) do
   end
 
   create_table "trees", force: :cascade do |t|
-    t.string "titre"
+    t.string "title"
     t.integer "taille"
     t.integer "price"
     t.text "geoloc"
