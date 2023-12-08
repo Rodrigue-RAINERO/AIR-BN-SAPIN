@@ -80,7 +80,7 @@
                 <% if total_bookings > 0 %>
                   <p>Vous avez <strong><%= total_bookings %></strong> <%= "réservation".pluralize(total_bookings) %> sur vos arbres </p>
                 <% else %>
-                  <p>Vous n'avez pas de réservation sur vos arbres</p>
+                  <p>You still don't have a reservation</p>
                 <% end %>
               <% end %>
               <%= current_user.email %>
