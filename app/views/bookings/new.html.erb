@@ -1,10 +1,24 @@
-<h1>New Reservation</h1>
+<div class="big-box-new-booking">
+  <div class="row d-flex justify-content-center mx-0">
+    <div class="col-md-4 mb-4">
+      <div class="div-new-booking">
+        <div class="div-input d-flex flex-column">
+          <h1 class="text-center">New Reservation <%= image_tag "sapin.png", class: "create-title-img" %> !</h1>
+          <%= simple_form_for [@tree, @booking] do |t| %>
+            <div class="input-new-reservation">
+              <%= t.label :start_date %>
+              <%= t.date_field :start_date, value: params[:start_date], input_html: {class: "text-list-new-booking"} %>
+            </div>
+            <div class="input-new-reservation">
+              <%= t.label :end_date %>
+              <%= t.date_field :end_date, value: params[:end_date], input_html: {class: "text-list-new-booking"} %>
+            </div>
+            <div class="div-btn-create-booking">
+              <%= t.submit class: "btn-create-booking" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
-<%= form_with model: [@tree, @booking] do |t| %>
-  <%= t.label :start_date %>
-  <%= t.date_field :start_date, value: params[:start_date] %>
-  <%= t.label :end_date %>
-  <%= t.date_field :end_date, value: params[:end_date] %>
-  <%= t.submit %>
-<% end %>
