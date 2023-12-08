@@ -1,14 +1,17 @@
-<h1>New tree</h1>
-<%= form_with model: @tree do |t| %>
-  <%= t.label :titre %>
-  <%= t.text_field :titre %>
-  <%= t.label :taille %>
-  <%= t.text_field :taille %>
-  <%= t.label :price %>
-  <%= t.text_field :price %>
-  <%= t.label :address %>
-  <%= t.text_field :address %>
-  <%= t.label :description %>
-  <%= t.text_field :description %>
-  <%= t.submit %>
-<% end %>
+<div class="big-box-show-trees">
+  <div class="row d-flex justify-content-center mx-0">
+    <div class="col-md-4 mb-4">
+      <div class="div-new-trees">
+        <h1 class="text-center">Create a new tree !</h1>
+        <%= simple_form_for [ @tree ] do |t| %>
+          <%= t.input :titre, input_html: {class: "text-list-new-tree"} %>
+          <%= t.input :taille, input_html: {class: "text-list-new-tree"} %>
+          <%= t.input :price, input_html: {class: "text-list-new-tree"} %>
+          <%= t.input :address, input_html: {class: "text-list-new-tree"} %>
+          <%= t.input :description, input_html: {class: "text-new-description"} %>
+          <%= t.submit class: "btn-create-tree" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
