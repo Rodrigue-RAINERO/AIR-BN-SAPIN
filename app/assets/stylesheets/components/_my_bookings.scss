@@ -1,5 +1,5 @@
 .btn-cansel-reservation {
-  transition: 0.8s ease;
+  transition: 0.5s ease;
   border: none;
   margin-top: 10px;
   font-family: roboto;
@@ -25,7 +25,7 @@
   color: black;
   font-weight: bold;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-  transition: 0.8s ease;
+  transition: 0.5s ease;
 }
 
 .big-box-my-trees {
@@ -39,4 +39,16 @@
 .my-trees-title p, .count {
   padding-top: 5px;
   font-size: 24px;
+}
+
+.my-booking-card-footer {
+  height: auto;
+  text-align: center;
+  background-color: rgba(0,0,0,.03);
+  border-top: 1px solid rgba(0,0,0,.125);
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.div-text-booking-card-footer {
+  padding: 20px 0 20px 0;
 }
