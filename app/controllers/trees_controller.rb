@@ -41,6 +41,7 @@ class TreesController < ApplicationController
     if @tree.save
     redirect_to trees_path
     else
+      Rails.logger.error(@tree.errors.inspect)
       render :new, status: :unprocessable_entity
     end
   end
