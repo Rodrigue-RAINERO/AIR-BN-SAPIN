@@ -17,35 +17,36 @@ User.destroy_all
 puts 'destroying users'
 
 
-sapins =[ {
-  nom: "epicea",
-  image: "https://www.plantezcheznous.com/wp-content/uploads/2017/11/EpiceaCommun.jpg",
-  address: "nice"
-},
-{
-  nom: "nordmann",
-  image: "https://www.plantezcheznous.com/wp-content/uploads/2017/11/Nordmann.jpg",
-  address: "paris"
-},
-{
-nom: "sapin noble",
-image: "https://www.plantezcheznous.com/wp-content/uploads/2017/11/SapinNoble.jpg",
-address: "marseille"
-},
-{
-nom: "sapin de serbie",
-image: "https://www.plantezcheznous.com/wp-content/uploads/2017/11/Picea_omorika.jpg",
-address: "bordeaux"
-}
+sapins = [
+  {
+    nom: "epicea",
+    image: "https://www.plantezcheznous.com/wp-content/uploads/2017/11/EpiceaCommun.jpg",
+    address: "nice"
+  },
+  {
+    nom: "nordmann",
+    image: "https://www.plantezcheznous.com/wp-content/uploads/2017/11/Nordmann.jpg",
+    address: "paris"
+  },
+  {
+    nom: "sapin noble",
+    image: "https://www.plantezcheznous.com/wp-content/uploads/2017/11/SapinNoble.jpg",
+    address: "marseille"
+  },
+  {
+    nom: "sapin de serbie",
+    image: "https://www.plantezcheznous.com/wp-content/uploads/2017/11/Picea_omorika.jpg",
+    address: "bordeaux"
+  }
 ]
 
-description = ["Un beau sapin", "Un sapin de noel", "bien grand", "belles branches"]
+description = ["Un beau sapin", "Un sapin de Noël", "Bien grand", "Belles branches"]
 
 user = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: 'password')  # Créez un utilisateur factice
-4.times do
+
+sapins.each do |sapin|
   taille = rand(100..500)
   price = rand(10..300)
-  sapin = sapins.sample
   tree = Tree.new(
     titre: sapin[:nom],
     taille: taille,
@@ -57,6 +58,7 @@ user = User.create!(name: Faker::Name.name, email: Faker::Internet.email, passwo
   )
   tree.save!
 end
+
 
 # Tree.create!(
 #   titre: 'Light & Spacious Garden Tree London',
