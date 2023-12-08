@@ -3,8 +3,8 @@
 
 <%= form_with model: [@tree, @booking] do |t| %>
   <%= t.label :start_date %>
-  <%= t.date_field :start_date %>
+  <%= t.date_field :start_date, value: params[:start_date] %>
   <%= t.label :end_date %>
-  <%= t.date_field :end_date %>
+  <%= t.date_field :end_date, value: params[:end_date] %>
   <%= t.submit %>
 <% end %>
