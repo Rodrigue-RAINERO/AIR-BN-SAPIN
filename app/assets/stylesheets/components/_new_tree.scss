@@ -1,5 +1,5 @@
 .div-new-trees {
-  transition: 0.8s ease;
+  transition: 0.5s ease;
   font-family: roboto;
   color: black;
   width: 550px;
@@ -97,4 +97,22 @@
   width: 30px;
   height: 40px;
   margin-bottom: 10px;
+}
+
+.form-actions {
+  transition: 0.5s ease;
+  font-family: roboto;
+  background-color: white;
+  border-radius: 15px;
+  font-weight: bold;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.form-actions:hover {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  background-color: #71EFA3;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  transition: 0.8s ease;
 }
