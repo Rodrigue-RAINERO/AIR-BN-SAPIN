@@ -1,0 +1,29 @@
+.btn-cansel-reservation {
+  transition: 0.8s ease;
+  border: none;
+  margin-top: 10px;
+  font-family: roboto;
+  font-weight: bold;
+  transition: 0.8s ease;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: rgba(0, 0, 0, .5);
+  padding: 10px 20px 10px 20px;
+  border-radius: 15px;
+  width: 180px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.btn-cansel-reservation:hover {
+  background-color: red;
+  margin-bottom: 0;
+  width: 100%;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  color: black;
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  transition: 0.8s ease;
+}

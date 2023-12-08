@@ -6,8 +6,16 @@ export default class extends Controller {
   connect() {
     console.log("Hello from toggle_controller.js")
   }
-  fire() {console.log("fire");
+  fire() {
+    console.log("fire");
     this.togglableElementTarget.classList.toggle("d-none");
     this.togglableElementTarget.classList.toggle("show-dropdown");
+  }
+
+  search(event) {
+    console.log(this.togglableElementTargets);
+    this.togglableElementTargets.forEach((element) => {
+      element.classList.remove("d-none");
+    });
   }
 }

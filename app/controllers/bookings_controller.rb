@@ -5,8 +5,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    # @booking = booking.find(params[:id])
-
+    @tree = Tree.find(params[:id])
   end
 
   def new
