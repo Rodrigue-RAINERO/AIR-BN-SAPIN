@@ -1,35 +1,36 @@
 <% count = @trees.length %>
-
 <div class="container big-box-my-trees">
   <h1 class="d-flex my-trees-title"><strong> My <%= "tree".pluralize(count)%></strong>
     <p class="first-p my-auto">(</p>
     <div class="count my-auto"><%= count %></div>
     <p class="my-auto">)</p>
   </h1>
-  <div class="row box-trees">
-
-    <% @trees.each do |tree| %>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <% if tree.image.nil? %>
-            <% tree.image = "https://www.lincroyable.fr/images/produits/65388%20(1).jpg" %>
-            <img src="<%= tree.image %>" class="card-img-top" alt="tree Image">
-          <% else %>
-            <img src="<%= tree.image %>" class="card-img-top" alt="tree Image">
-          <% end %>
-          <div class="card-body">
-            <h4 class="card-title"><strong><%= link_to tree.titre, tree_path(tree) %></strong></h4>
-            <p><%= tree.taille %>CM</p>
-            <div class="d-flex justify-content-start">
-              <p><%= tree.price %> <i class="fa-solid fa-euro-sign"></i> </p>
-              <p><%= tree.address %></p>
-              <p><%= tree.description %></p>
+  <div class="d-flex">
+    <div class="row box-trees">
+      <% @trees.each do |tree| %>
+        <div class="col-md-4 mb-4 little-box-tree">
+          <div class="card h-100">
+            <% if tree.image.nil? %>
+              <% tree.image = "https://www.lincroyable.fr/images/produits/65388%20(1).jpg" %>
+              <img src="<%= tree.image %>" class="card-img-top" alt="tree Image">
+            <% else %>
+              <img src="<%= tree.image %>" class="card-img-top" alt="tree Image">
+            <% end %>
+            <div class="card-body">
+              <h4 class="card-title"><strong><%= link_to tree.titre, tree_path(tree) %></strong></h4>
+              <div class="d-flex flex-column justify-content-start">
+                <p><%= tree.address %></p>
+                <p><%= tree.description %></p>
+                <div class="d-flex justify-content-between">
+                  <p><%= tree.taille %> cm</p>
+                  <p><%= tree.price %> <i class="fa-solid fa-euro-sign"></i> </p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="card-footer">
+            <%# <div class="card-footer"> %>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

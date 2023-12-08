@@ -1,0 +1,85 @@
+.div-edit-trees {
+  transition: 0.8s ease;
+  font-family: roboto;
+  color: black;
+  width: 550px;
+  height: auto;
+  background-color: rgb(245, 245, 245);
+  backdrop-filter: blur(5px);
+  padding: 30px;
+  border-radius: 15px;
+  margin-top: 60px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.div-edit-trees:hover {
+  background-color: rgb(214, 236, 213);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.div-edit-trees h1 {
+  margin-bottom: 20px;
+}
+
+.text-list-description {
+  margin-bottom: 90px;
+}
+
+.text-list-new-movie, .text-list-description {
+  background-color: rgb(240, 240, 240) !important;
+}
+
+.text-list-new-movie:focus, .text-list-description:focus {
+  background-color: white !important;
+}
+
+.btn-update-tree, .btn-edit-delete {
+  transition: 0.8s ease;
+  border: none;
+  margin-top: 10px;
+  font-family: roboto;
+  font-weight: bold;
+  transition: 0.8s ease;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: rgba(0, 0, 0, .5);
+  padding: 10px 20px 10px 20px;
+  border-radius: 15px;
+}
+
+.btn-update-tree {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.btn-edit-delete {
+  text-decoration: none;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.btn-update-tree:hover {
+  background-color: #71EFA3;
+  bottom: 0;
+  left: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-edit-delete:hover {
+  background-color: red;
+  bottom: 0;
+  right: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn-update-tree:hover, .btn-edit-delete:hover {
+  color: black;
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  transition: 0.8s ease;
+}
