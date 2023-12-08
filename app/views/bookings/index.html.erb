@@ -5,34 +5,35 @@
     <div class="count my-auto"><%= count %></div>
     <p class="my-auto">)</p>
   </h1>
-  <div class="row box-trees">
-    <% @bookings.each do |booking| %>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <img src="<%= booking.tree.image %>" class="card-img-top" alt="tree Image">
-          <div class="card-body">
-            <div class="d-flex flex-column justify-content-start">
-              <p><%= booking.tree.address %></p>
-              <p><%= booking.tree.description %></p>
-              <div class="d-flex justify-content-between">
-                <p><%= booking.tree.taille %> cm</p>
-                <p><%= booking.tree.price %> <i class="fa-solid fa-euro-sign"></i> </p>
+  <div class="d-flex">
+    <div class="row box-trees">
+      <% @bookings.each do |booking| %>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <% if booking.tree.image == "" || booking.tree.image.nil? %>
+              <% booking.tree.image = "https://www.lincroyable.fr/images/produits/65388%20(1).jpg" %>
+              <img src="<%= booking.tree.image %>" class="card-img-top" alt="tree Image">
+            <% else %>
+              <img src="<%= booking.tree.image %>" class="card-img-top" alt="tree Image">
+            <% end %>
+            <div class="card-body">
+              <div class="d-flex flex-column justify-content-start">
+                <p><%= booking.tree.address %></p>
+                <p><%= booking.tree.description %></p>
+                <div class="d-flex justify-content-between">
+                  <p><%= booking.tree.taille %> cm</p>
+                  <p><%= booking.tree.price %> <i class="fa-solid fa-euro-sign"></i> </p>
+                </div>
               </div>
             </div>
+            <div class="card-footer">
+              <p><%= booking.start_date %></p>
+              <p><%= booking.end_date %></p>
+            </div>
+            <%= link_to "Cancel reservation", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-cansel-reservation mx-auto" %>
           </div>
-          <div class="card-footer">
-            <p><%= booking.start_date %></p>
-            <p><%= booking.end_date %></p>
-          </div>
-          <%= link_to "Cancel reservation", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-cansel-reservation mx-auto" %>
         </div>
       </div>
-    </div>
-  <% end %>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <% end %>
+  </div>
 </div>
