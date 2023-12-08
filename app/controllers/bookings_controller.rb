@@ -21,6 +21,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path
     else
+      flash[:alert] = @booking.errors.full_messages.join(', ')
       render :new, status: :unprocessable_entity
     end
   end

@@ -7,11 +7,11 @@
           <%= simple_form_for [@tree, @booking] do |t| %>
             <div class="input-new-reservation">
               <%= t.label :start_date %>
-              <%= t.date_field :start_date, input_html: {class: "text-list-new-booking"} %>
+              <%= t.date_field :start_date, value: params[:start_date], input_html: {class: "text-list-new-booking"} %>
             </div>
             <div class="input-new-reservation">
               <%= t.label :end_date %>
-              <%= t.date_field :end_date, input_html: {class: "text-list-new-booking"} %>
+              <%= t.date_field :end_date, value: params[:end_date], input_html: {class: "text-list-new-booking"} %>
             </div>
             <div class="div-btn-create-booking">
               <%= t.submit class: "btn-create-booking" %>
@@ -21,3 +21,4 @@
       </div>
     </div>
   </div>
+
