@@ -1,4 +1,4 @@
-.div-new-trees {
+.div-new-bookings {
   transition: 0.8s ease;
   font-family: roboto;
   color: black;
@@ -17,17 +17,17 @@
   padding: 30px 30px 0 30px;
 }
 
-.div-new-trees:hover {
+.div-new-bookings:hover {
   background-color: rgb(214, 236, 213);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
-.text-list-new-tree,
+.text-list-new-booking,
 .text-new-description {
   background-color: rgb(240, 240, 240) !important;
 }
 
-.text-list-new-tree:focus,
+.text-list-new-booking:focus,
 .text-new-description:focus {
   background-color: white !important;
 }
@@ -36,7 +36,7 @@
   text-align: center;
 }
 
-// .btn-create-tree {
+// .btn-create-booking {
 //   transition: all 0.8s ease;
 //   border: none;
 //   margin-top: 10px;
@@ -50,7 +50,7 @@
 //   border-radius: 15px;
 // }
 
-// .btn-create-tree:hover {
+// .btn-create-booking:hover {
 //   width: 100%;
 //   color: black;
 //   background-color: #71EFA3;
@@ -59,12 +59,12 @@
 //   transition: all 0.8s ease;
 // }
 
-.div-btn-create-tree {
+.div-btn-create-booking {
   display: flex;
   justify-content: center;
 }
 
-.btn-create-tree {
+.btn-create-booking {
   transition: 0.8s ease;
   margin-top: 10px;
   font-family: roboto;
@@ -81,7 +81,7 @@
   border: none;
 }
 
-.btn-create-tree:hover {
+.btn-create-booking:hover {
   margin-top: 0;
   margin-bottom: 0;
   width: 120%;
@@ -98,4 +98,12 @@
   width: 30px;
   height: 40px;
   margin-bottom: 10px;
+}
+
+.big-box-new-booking {
+  margin-top: 150px;
+}
+
+.input-new-reservation {
+  text-align: center;
 }
