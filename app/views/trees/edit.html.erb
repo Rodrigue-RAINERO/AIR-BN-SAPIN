@@ -2,7 +2,7 @@
   <div class="row d-flex justify-content-center mx-0">
     <div class="col-md-4 mb-4">
       <div class="div-edit-trees">
-        <h1 class="text-center">Edit your tree !</h1>
+        <h1 class="text-center">Edit your tree <%= image_tag "sapin.png", class: "create-title-img" %> !</h1>
         <%= simple_form_for [ @tree ] do |t| %>
           <%= t.input :titre, input_html: {class: "text-list-new-movie"} %>
           <%= t.input :taille, input_html: {class: "text-list-new-movie"} %>

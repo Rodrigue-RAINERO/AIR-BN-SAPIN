@@ -5,12 +5,24 @@
         <div class="div-input">
           <h1 class="text-center">Create a new tree <%= image_tag "sapin.png", class: "create-title-img" %> !</h1>
           <%= simple_form_for [ @tree ] do |t| %>
-            <%= t.input :titre, input_html: {class: "text-list-new-tree"} %>
-            <%= t.input :taille, input_html: {class: "text-list-new-tree"} %>
-            <%= t.input :price, input_html: {class: "text-list-new-tree"} %>
-            <%= t.input :address, input_html: {class: "text-list-new-tree"} %>
-            <%= t.input :description, input_html: {class: "text-new-description"} %>
-            <%= t.input :image, input_html: {class: "text-list-new-tree"} %>
+            <div class="div-text-new-tree">
+              <%= t.input :titre, input_html: {class: "text-list-new-tree"} %>
+            </div>
+            <div class="div-text-new-tree">
+              <%= t.input :taille, input_html: {class: "text-list-new-tree"} %>
+            </div>
+            <div class="div-text-new-tree">
+              <%= t.input :price, input_html: {class: "text-list-new-tree"} %>
+            </div>
+            <div class="div-text-new-tree">
+              <%= t.input :address, input_html: {class: "text-list-new-tree"} %>
+            </div>
+            <div class="div-text-new-tree">
+              <%= t.input :description, input_html: {class: "text-new-description"} %>
+            </div>
+            <div class="div-text-new-tree">
+              <%= t.input :image, input_html: {class: "text-list-new-tree"} %>
+            </div>
             <div class="div-btn-create-tree">
               <%= t.submit class: "btn-create-tree" %>
             </div>

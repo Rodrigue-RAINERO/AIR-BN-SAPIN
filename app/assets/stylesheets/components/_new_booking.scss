@@ -13,10 +13,6 @@
   padding-bottom: 0.1px;
 }
 
-.div-input {
-  padding: 30px 30px 0 30px;
-}
-
 .div-new-bookings:hover {
   background-color: rgb(214, 236, 213);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
@@ -37,33 +33,6 @@
 .text-list-end-date-booking {
   margin-bottom: 20px;
 }
-
-.center-form {
-  text-align: center;
-}
-
-// .btn-create-booking {
-//   transition: all 0.8s ease;
-//   border: none;
-//   margin-top: 10px;
-//   font-family: roboto;
-//   font-weight: bold;
-//   transition: 0.8s ease;
-//   background-color: white;
-//   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-//   color: rgba(0, 0, 0, .5);
-//   padding: 10px 20px 10px 20px;
-//   border-radius: 15px;
-// }
-
-// .btn-create-booking:hover {
-//   width: 100%;
-//   color: black;
-//   background-color: #71EFA3;
-//   font-weight: bold;
-//   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-//   transition: all 0.8s ease;
-// }
 
 .div-btn-create-booking {
   display: flex;
@@ -109,8 +78,14 @@
   margin-top: 150px;
 }
 
-.input-new-reservation {
+.input-new-reservation-start {
   text-align: center;
+  padding: 30px 70px 10px 0;
+}
+
+.input-new-reservation-end {
+  text-align: center;
+  padding: 0 70px 30px 0 ;
 }
 
 .div-new-reservation {
@@ -134,4 +109,8 @@
 .div-input-new-reservation {
   align-items: end;
   margin-right: 95px;
+}
+
+.div-input h1 {
+  padding: 20px 0 0 0;
 }

@@ -62,12 +62,10 @@
   background-color: white;
   border-radius: 15px;
   font-weight: bold;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .nav-link:hover {
-  padding-left: 30px !important;
-  padding-right: 30px !important;
   background-color: #71EFA3;
   color: black;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
@@ -84,7 +82,7 @@
 
 .search-navbar input {
   transition: 0.8s ease;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   font-family: roboto;
   border: none;
   font-weight: bold;
@@ -92,7 +90,7 @@
   border-radius: 15px;
   padding: 5px 0px 5px 10px;
   border: none;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   padding: 8px 0px 8px 5px !important;
 }
 
@@ -106,24 +104,26 @@
   font-weight: bold;
   padding-right: 5px !important;
   background-color: white;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border: none;
 }
 
 .btn-submit-search-navbar:hover {
-background-color: #71EFA3;
-box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  background-color: #71EFA3;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
-.dropdown-menu {
+#dropdown-menu {
   transition: 0.8s ease;
+  padding: 0;
   text-align: center;
-  width: 300px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  width: 320px;
+  border-radius: 15px;
 }
 
-.dropdown-menu:hover {
+#dropdown-menu:hover {
   background-color: rgb(214, 236, 213);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   transition: 0.8s ease;
 }
 
@@ -137,4 +137,23 @@ box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 .show-dropdown {
   opacity: 1;
   transform: scaleY(1);
+}
+
+#btn-log-out {
+  transition: 0.5s ease;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 120px;
+}
+
+#btn-log-out:hover {
+  margin-bottom: 0;
+  width: 100%;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  transition: 0.5s ease;
+}
+
+.div-reservation-and-email {
+  padding: 20px 20px 0 20px;
 }

@@ -1,0 +1,33 @@
+.div-form-inputs {
+  transition: 0.8s ease;
+  font-family: roboto;
+  color: black;
+  width: 550px;
+  height: auto;
+  background-color: rgb(245, 245, 245);
+  backdrop-filter: blur(5px);
+  padding: 30px;
+  border-radius: 15px;
+  margin-top: 60px;
+  padding-bottom: 0.1px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.div-form-inputs:hover {
+  background-color: rgb(214, 236, 213);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.div-form-inputs h1 {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.center-form {
+  text-align: center;
+}
+
+.form-actions {
+  margin-right: 5px;
+}
